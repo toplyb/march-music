@@ -62,7 +62,6 @@ const getPlaySongDetail = async (song: object, dbClick?: boolean) => {
   }
   store.commit('changeCurrentPlaySong', currentPlaySong)
   if (dbClick) {
-    console.log(audioDom)
     setTimeout(() => {
       audioDom.play()
     }, 100)

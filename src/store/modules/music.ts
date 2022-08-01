@@ -1,6 +1,7 @@
 const musicModel: object = {
   state: {
     currentPlaySong: null,
+    currentSongLyrics: '',
     indexHotSong: null
   },
 
@@ -11,6 +12,10 @@ const musicModel: object = {
 
     changeIndexHotSong (state: any, value: object) {
       state.indexHotSong = value
+    },
+
+    changeCurrentLyrics (state: any, value: string) {
+      state.currentSongLyrics = value
     }
   },
 

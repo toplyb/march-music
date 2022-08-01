@@ -8,14 +8,23 @@
       </p>
     </div>
     <div class="right">
-      <audio id="audio" ref="audio" class="audio" controls :src="currentSong['url']" @ended="overAudio"></audio>
+      <audio ref="audio" class="audio" controls :src="currentSong['url']" @ended="overAudio"></audio>
+      <div class="audio-box">
+        <div class="lyrics">
+          <p>{{lyrics[0]['content']}}</p>
+        </div>
+        <div class="audio-icon">
+          <i class="iconfont icon-bofangqi-bofangshu"></i>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { computed, defineExpose, ref } from 'vue'
+import { computed, defineExpose, watch, ref, toRaw, reactive } from 'vue'
 import { useStore } from 'vuex'
+import api from '@/http/api'
 
 const audio = ref()
 defineExpose({ audio })
@@ -23,6 +32,27 @@ defineExpose({ audio })
 const store = useStore()
 const currentSong = computed(() => {
   return store.state.musicModel.currentPlaySong
+})
+
+const lyrics = reactive([])
+const currentLyrics = ref('')
+watch(currentSong, async (newValue) => {
+  console.log(newValue, 'newValue')
+  const lyricsResult = await api.get({
+    url: `/lyric?id=${newValue.id}`
+  })
+
+  store.commit('changeCurrentLyrics', lyricsResult)
+
+  const lyricsList = lyricsResult.lrc.lyric.split(/[\n]/)
+  lyricsList.forEach(item => {
+    const itemList = item.split(/\[(.+?)\]/)
+    const temp = {
+      time: itemList[1],
+      content: itemList[2]
+    }
+    lyrics.push(temp)
+  })
 })
 
 const overAudio = () => {
@@ -77,6 +107,31 @@ const overAudio = () => {
     flex: 1;
     .audio {
       width: 400px;
+      display: none;
+    }
+
+    .audio-box {
+      display: flex;
+      align-items: center;
+
+      .lyrics {
+        flex: 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+      }
+
+      .audio-icon {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        i {
+          font-size: 40px!important;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
