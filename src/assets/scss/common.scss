@@ -1,0 +1,10 @@
+@import "reset";
+
+html, body, #app {
+  height: 100%;
+  background-color: $window-bg;
+}
+
+#app .icon-bofangqi-bofangshu {
+  font-size: 30px;
+}
