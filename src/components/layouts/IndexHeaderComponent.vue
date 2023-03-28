@@ -30,7 +30,6 @@ import Search from '@/components/layouts/SearchComponent.vue'
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/scss/variable';
 .header {
   height: 65px;
   display: flex;

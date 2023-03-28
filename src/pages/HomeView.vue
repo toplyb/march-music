@@ -32,6 +32,7 @@ import Main from '@/components/layouts/MainComponent.vue'
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 3px 3px $window-bg;
 
     .app-body {
       display: flex;
