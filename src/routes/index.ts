@@ -1,7 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '@/pages/HomeView.vue'
 
-const IndexComponent = () => import('@/components/index/IndexComponent.vue')
+const IndexComponent = () => import('@/pages/IndexComponent.vue')
+const SingerView = () => import('@/pages/SingerView.vue')
 
 const routes = [
   {
@@ -12,6 +13,10 @@ const routes = [
       {
         path: 'index',
         component: IndexComponent
+      },
+      {
+        path: 'singer',
+        component: SingerView
       }
     ]
   }

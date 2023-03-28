@@ -14,7 +14,7 @@
     display: inline-block;
     width: 500px;
     border: none;
-    background-color: #f4f5f8;
+    background-color: $hover-bg;
     padding: 10px 20px;
     box-sizing: border-box;
     border-radius: 20px;

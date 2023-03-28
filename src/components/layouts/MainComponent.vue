@@ -1,6 +1,6 @@
 <template>
   <suspense>
-    <div>
+    <div class="main">
       <router-view></router-view>
       <MusicBottomComponent></MusicBottomComponent>
     </div>
@@ -12,5 +12,7 @@ import MusicBottomComponent from '@/components/music/MusicBottomComponent.vue'
 </script>
 
 <style scoped lang="scss">
-
+.main {
+  flex: 1;
+}
 </style>

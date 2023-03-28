@@ -32,6 +32,7 @@ import Main from '@/components/layouts/MainComponent.vue'
 
     .app-body {
       display: flex;
+      padding-top: 10px;
     }
   }
 }

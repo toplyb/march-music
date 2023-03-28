@@ -10,9 +10,9 @@
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/scss/variable";
+@import "@/assets/scss/variable.scss";
 
 .index {
-  padding-top: 20px;
+
 }
 </style>
