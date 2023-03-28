@@ -3,8 +3,12 @@ import useSearchStore from '@/store/search'
 const useSearchHook = () => {
   const store = useSearchStore()
 
-  return {
+  const searchHandler = async () => {
+    await store.searchHTTP()
+  }
 
+  return {
+    searchHandler
   }
 }
 

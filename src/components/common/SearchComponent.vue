@@ -1,11 +1,15 @@
 <template>
   <div class="search">
-    <input type="text" placeholder="search">
+    <input type="text" placeholder="search" v-model="store.inputValue" @keyup.enter="searchHandler">
   </div>
 </template>
 
 <script lang="ts" setup>
+import useSearchStore from '@/store/search'
+import useSearchHook from '@/hooks/search'
 
+const store = useSearchStore()
+const { searchHandler } = useSearchHook()
 </script>
 
 <style scoped lang="scss">
