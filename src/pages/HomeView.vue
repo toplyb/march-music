@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts" setup>
-import IndexHeader from '@/components/layouts/IndexHeaderComponent.vue'
+import IndexHeader from '@/components/layouts/HeaderComponent.vue'
 import Aside from '@/components/layouts/AsideComponent.vue'
 import Main from '@/components/layouts/MainComponent.vue'
 </script>
@@ -24,20 +24,14 @@ import Main from '@/components/layouts/MainComponent.vue'
   align-items: center;
 
   .container {
-    width: 1240px;
-    height: 700px;
     background-color: #fff;
     border-radius: 10px;
-    padding: 20px 20px 0 20px;
+    padding: 20px;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
     box-shadow: 0 0 3px 3px $window-bg;
 
     .app-body {
       display: flex;
-      height: 615px;
-      flex-shrink: 0;
     }
   }
 }

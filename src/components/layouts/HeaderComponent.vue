@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts" setup>
-import Search from '@/components/layouts/SearchComponent.vue'
+import Search from '@/components/common/SearchComponent.vue'
 </script>
 
 <style scoped lang="scss">

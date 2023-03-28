@@ -16,7 +16,7 @@
   width: $aside-width;
   height: 100%;
   overflow-y: scroll;
-  padding-top: 50px;
+  padding-top: 20px;
   box-sizing: border-box;
   flex-shrink: 0;
 
