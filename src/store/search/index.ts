@@ -7,8 +7,7 @@ const useSearchStore = defineStore('search', {
   }),
   actions: {
     async searchHTTP(keyWord = '') {
-      const result = await axios.get(`/search?keywords=${keyWord ? keyWord : this.inputValue}`)
-      console.log(result)
+      return await axios.get(`/search?keywords=${keyWord ? keyWord : this.inputValue}`)
     }
   }
 })

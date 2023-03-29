@@ -1,25 +1,25 @@
 <template>
   <div class="aside">
     <div class="aside-container">
-      <router-link v-for="side in sideList" :key="side.id" :to="side.path">{{ side.label }}</router-link>
+      <!--<router-link v-for="side in sideList" :key="side.id" :to="side.path">{{ side.label }}</router-link>-->
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 
-const sideList = [
-  {
-    id: 1,
-    label: '首页',
-    path: '/'
-  },
-  {
-    id: 2,
-    label: '歌手列表',
-    path: 'singer'
-  }
-]
+// const sideList = [
+//   {
+//     id: 1,
+//     label: '首页',
+//     path: '/'
+//   },
+//   {
+//     id: 2,
+//     label: '歌手列表',
+//     path: 'singer'
+//   }
+// ]
 </script>
 
 <style scoped lang="scss">

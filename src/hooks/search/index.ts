@@ -1,10 +1,13 @@
 import useSearchStore from '@/store/search'
+import useSongStore from '@/store/song'
 
 const useSearchHook = () => {
   const store = useSearchStore()
+  const songStore = useSongStore()
 
   const searchHandler = async () => {
-    await store.searchHTTP()
+    const result = await store.searchHTTP()
+    songStore.setCurrentSongList(result)
   }
 
   return {
