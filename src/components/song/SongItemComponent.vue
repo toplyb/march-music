@@ -35,13 +35,17 @@ const playMusic = () => {
 .song-item {
   display: flex;
   align-items: center;
-  cursor: pointer;
   border-radius: 5px;
   padding: 0 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: $window-bg;
+  box-shadow: $mid-black-shadow, $mid-white-shadow;
+  margin: 30px 15px;
+  border: 1px solid $font-gray-second-color;
 
   &:hover {
-    background-color: $hover-bg;
-    box-shadow: inset 0 0 10px 10px rgba(234, 234, 237, 0.09);
+    box-shadow: inset $mid-white-shadow, inset $mid-black-shadow;
   }
 
   h3, p, span {
@@ -62,13 +66,15 @@ const playMusic = () => {
 
   .handler-icon {
     width: 50px;
+    cursor: pointer;
     i {
-      font-size: 30px;
+      font-size: 40px;
       border-radius: 50%;
       color: $font-gray-second-color;
 
       &:hover {
-        box-shadow: 0 0 3px 3px $font-gray-second-color;
+        background-color: $window-bg;
+        box-shadow: inset $mid-black-shadow, inset $mid-white-shadow;
         color: $font-color;
       }
     }
