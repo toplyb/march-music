@@ -17,11 +17,12 @@ const { searchHandler } = useSearchHook()
   input {
     display: inline-block;
     width: 500px;
-    border: none;
-    background-color: $hover-bg;
+    background-color: $window-bg;
     padding: 10px 20px;
     box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 5px;
+    border: 1px solid $font-gray-second-color;
+    box-shadow: inset $mid-white-shadow, inset $mid-black-shadow;
   }
 
   input:focus {

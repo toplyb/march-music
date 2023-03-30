@@ -86,9 +86,17 @@ import Search from '@/components/common/SearchComponent.vue'
   }
 
   &-user {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: $window-bg;
+    box-shadow: inset $mid-white-shadow, inset $mid-black-shadow;
     img {
-      width: 50px;
-      height: 50px;
+      width: 50%;
+      height: 50%;
       cursor: pointer;
     }
   }

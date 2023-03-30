@@ -23,7 +23,7 @@ let player: any = null
 onMounted(() => {
   player = new APlayer({
     container: document.getElementById('aplayer') as HTMLElement,
-  });
+  })
 })
 
 watch(() => props.song, (newValue) => {
@@ -40,5 +40,24 @@ watch(() => props.song, (newValue) => {
 .audio-player {
   border-radius: 5px;
   margin: 0;
+  border: 1px solid $font-gray-second-color;
+  background-color: $window-bg;
+  box-shadow: inset $mid-black-shadow, inset $mid-white-shadow;
+}
+</style>
+
+<style lang="scss">
+.aplayer-body {
+  .aplayer-pic {
+    height: 80px;
+    width: 80px;
+    border-right: 1px solid $font-gray-second-color;
+  }
+
+  .aplayer-info {
+    margin-left: 80px;
+    padding: 14px 7px 14px 10px;
+    height: auto;
+  }
 }
 </style>

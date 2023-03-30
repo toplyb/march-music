@@ -24,11 +24,12 @@ import Main from '@/components/layouts/MainComponent.vue'
   align-items: center;
 
   .container {
-    background-color: #fff;
     border-radius: 10px;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 0 0 3px 3px $window-bg;
+    border: 1px solid $font-gray-second-color;
+    background-color: $window-bg;
+    box-shadow: $big-white-shadow, $big-black-shadow;
 
     .app-body {
       display: flex;
