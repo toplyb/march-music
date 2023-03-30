@@ -10,7 +10,11 @@ axios.interceptors.request.use((config) => {
 
 axios.interceptors.response.use((response) => {
   if (response.data.code === 200) {
-    return response.data.result
+    if (response.data.result) {
+      return response.data.result
+    } else if (response.data.data) {
+      return response.data.data
+    }
   } else {
     console.log('error')
   }

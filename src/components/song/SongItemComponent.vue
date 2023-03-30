@@ -1,10 +1,10 @@
 <template>
-  <div class="song-item">
+  <div class="song-item" @dblclick="playMusic">
     <h3>{{props.songItem.name}}</h3>
     <p v-for="singer in props.songItem.artists" :key="singer.id">{{singer.name}}</p>
     <span>{{timeBySong(props.songItem.duration)}}</span>
     <div class="handler-icon">
-      <i class="iconfont icon-bofangqi-bofangshu"></i>
+      <i @click="playMusic" class="iconfont icon-bofangqi-bofangshu"></i>
     </div>
   </div>
 </template>
@@ -24,6 +24,11 @@ const timeBySong = (data: string) => {
   return moment.utc(data).format('HH:mm:ss')
 }
 
+const emits = defineEmits(['play'])
+
+const playMusic = () => {
+  emits('play', props.songItem)
+}
 </script>
 
 <style scoped lang='scss'>

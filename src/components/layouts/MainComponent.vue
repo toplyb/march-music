@@ -2,13 +2,16 @@
   <suspense>
     <div class="main">
       <router-view></router-view>
-      <MusicBottomComponent></MusicBottomComponent>
+      <PlaySongComponent :song="store.currentSong"></PlaySongComponent>
     </div>
   </suspense>
 </template>
 
 <script lang="ts" setup>
-import MusicBottomComponent from '@/components/music/MusicBottomComponent.vue'
+import PlaySongComponent from '@/components/song/PlaySongComponent.vue'
+import useSongStore from '@/store/song'
+
+const store = useSongStore()
 </script>
 
 <style scoped lang="scss">

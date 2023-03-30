@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     component: Home,
-    redirect: '/index',
+    redirect: '/song',
     children: [
       {
         path: 'index',

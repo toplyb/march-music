@@ -7,18 +7,32 @@
 <script setup lang='ts'>
 import APlayer from 'aplayer-ts'
 import 'aplayer-ts/dist/APlayer.min.css'
-import { onMounted } from 'vue'
+import { onMounted, watch } from 'vue'
 
+const props = defineProps({
+  song: {
+    type: Object,
+    default() {
+      return {}
+    },
+    required: false
+  }
+})
+
+let player: any = null
 onMounted(() => {
-  new APlayer({
+  player = new APlayer({
     container: document.getElementById('aplayer') as HTMLElement,
-    audio: [{
-      name: 'name',
-      artist: 'artist',
-      url: 'http://downsc.chinaz.net/Files/DownLoad/sound1/201906/11582.mp3\n',
-      cover: 'https://ui-avatars.com/api/?background=0D8ABC&color=fff'
-    }]
   });
+})
+
+watch(() => props.song, (newValue) => {
+  player.list.clear()
+  player.list.add({
+    name: newValue.name,
+    url: newValue.url,
+  })
+  player.play()
 })
 </script>
 
